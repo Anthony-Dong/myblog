@@ -1,0 +1,21 @@
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:10086/eureka
+    registry-fetch-interval-seconds: 20
+  instance:
+    prefer-ip-address: true
+    ip-address: 127.0.0.1
+    instance-id: ${spring.application.name}:${server.port}
+
+
+spring:
+  cloud:
+    config:
+      label: master
+      profile: dev
+      name: blogs-config
+      discovery:
+        enabled: true
+        service-id: blogs-config
+

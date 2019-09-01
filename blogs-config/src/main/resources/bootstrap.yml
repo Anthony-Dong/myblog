@@ -1,0 +1,22 @@
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:10086/eureka
+    registry-fetch-interval-seconds: 10
+  instance:
+    prefer-ip-address: true
+    ip-address: 127.0.0.1
+    instance-id: ${spring.application.name}:${server.port}
+
+spring:
+  cloud:
+    config:
+      server:
+        git:
+          uri: 
+          username: 
+          password: 
+          timeout: 100000
+          search-paths: config
+          default-label: master
+      label: master

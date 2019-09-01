@@ -1,0 +1,20 @@
+server:
+  port: 8031
+
+
+spring:
+  application:
+    name: blogs-auth
+  #  # 环境设置：dev、test、prod
+  profiles:
+    active: dev
+
+blogs:
+  jwt:
+    secret: ${jwt.secret} # 登录校验的密钥
+    pubKeyPath: ${jwt.pubKeyPath} # 公钥地址
+    priKeyPath: ${jwt.priKeyPath} # 私钥地址
+    expire: ${jwt.expire} # 过期时间,单位分钟
+  cookie:
+    loginName: ${cookie.loginName}
+    maxAge: 604800

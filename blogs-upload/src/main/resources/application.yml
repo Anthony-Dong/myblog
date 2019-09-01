@@ -1,0 +1,11 @@
+spring:
+  application:
+    name: blogs-upload
+  servlet:
+    multipart:
+      max-file-size: 20MB
+      max-request-size: 30MB
+server:
+  port: 8011
+
+

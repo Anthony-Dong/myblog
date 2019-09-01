@@ -1,0 +1,24 @@
+spring:
+  application:
+    name: blogs-message
+  data:
+    mongodb:
+      host: ${mongodb.host}
+      port: ${mongodb.port}
+      database: ${mongodb.database}
+  mail:
+    username: ${email.username}
+    password: ${email.password}
+    default-encoding: UTF-8
+    host: ${email.host}
+    properties:
+      mail:
+        smtp:
+          ssl:
+            enable: true
+
+
+
+server:
+  port: 8041
+

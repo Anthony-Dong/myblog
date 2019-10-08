@@ -1,0 +1,22 @@
+server:
+  port: 10086
+  jetty:
+    accesslog:
+      enabled: false
+spring:
+  application:
+    name: blogs-registry
+  security:
+    user:
+      name: admin
+      password: 19970516
+eureka:
+  client:
+    service-url:
+      defaultZooe: http://127.0.0.1:10086/eureka
+    register-with-eureka: false
+    fetch-registry: false
+  instance:
+    hostname: localhost
+
+#    eureka.instance.hostname=localhost

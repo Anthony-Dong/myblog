@@ -1,0 +1,10 @@
+server:
+  port: 8001
+  jetty:
+    accesslog:
+      enabled: false
+spring:
+  application:
+    name: blogs-config
+#logging:
+#  level: warn

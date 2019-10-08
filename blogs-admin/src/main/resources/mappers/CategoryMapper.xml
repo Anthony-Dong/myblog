@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.blogs.mapper.CategoryMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.blogs.pojo.Category">
+        <id column="id" property="id" />
+        <result column="name" property="name" />
+        <result column="describes" property="describes" />
+        <result column="parent_id" property="parentId" />
+        <result column="is_parent" property="isParent" />
+    </resultMap>
+
+    <select id="selectCountProjectById" resultType="com.blogs.dto.CountProject" >
+        SELECT
+            ca.id AS 'id',
+            ca.`name` AS 'name',
+            COUNT(pr.id) AS 'count'
+        FROM
+            project pr,
+            category ca
+        WHERE
+            pr.category = ca.id
+        AND ca.is_parent = 1
+        GROUP BY
+            ca.`name`
+        ORDER BY
+            count DESC
+    </select>
+</mapper>

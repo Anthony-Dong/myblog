@@ -1,0 +1,38 @@
+eureka:
+  client:
+    service-url:
+      defaultZone: http://admin:19970516@127.0.0.1:10086/eureka
+    registry-fetch-interval-seconds: 60
+  instance:
+    prefer-ip-address: true
+    ip-address: 127.0.0.1
+    instance-id: ${spring.application.name}:${server.port}
+
+
+
+
+
+#spring:
+#  cloud:
+#    config:
+#      label: master
+#      profile: dev
+#      name: blogs-config
+#      discovery:
+#        enabled: true
+#        service-id: blogs-config
+
+
+#http://${userName}:${password}@ localhost:1111/eureka/
+spring:
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://gitee.com/Anthony-Dong/config.git
+          username: 574986060@qq.com
+          password: fhd19970516
+          timeout: 100000
+          search-paths: config
+          default-label: master
+      label: master

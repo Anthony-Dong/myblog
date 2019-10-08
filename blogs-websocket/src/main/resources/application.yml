@@ -1,0 +1,19 @@
+spring:
+  application:
+    name: blogs-websocket
+  http:
+    encoding:
+      charset: utf-8
+      enabled: true
+
+#  data:
+#    mongodb:
+#      host: ${mongodb.host}
+#      port: ${mongodb.port}
+#      database: ${mongodb.database}
+
+server:
+  port: 8051
+
+
+
